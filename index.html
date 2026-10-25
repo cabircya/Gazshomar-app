@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="کپسول‌یار؛ مدیریت ثبت و تحویل کپسول">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>کپسول‌یار | مدیریت تحویل کپسول</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#17243a;--line:#27364c;--text:#f2f6fc;--muted:#91a2ba;--gold:#f5c451;--green:#35d3a0;--red:#ff7272;--blue:#75a7ff;--radius:20px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#243755 0,transparent 40%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:auto;padding:20px 16px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(145deg,#ffe18a,#d99b1c);display:grid;place-items:center;color:#172033;font-size:25px;box-shadow:0 8px 25px #f5c45122}.brand h1{font-size:22px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.cloud{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:8px 12px;border-radius:30px;white-space:nowrap}.cloud.online{color:var(--green);border-color:#236b5b}.cloud.offline{color:var(--gold)}
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:22px 0}.eyebrow{color:var(--gold);font-size:12px;font-weight:700}.hero h2{font-size:clamp(24px,4vw,34px);margin:6px 0}.hero p{color:var(--muted);margin:0;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.stat,.panel{background:linear-gradient(145deg,#152238,#101a2b);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px #00000012}.stat{min-height:120px}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#ffffff0d;font-size:17px}.stat strong{display:block;font-size:25px;margin-top:12px;letter-spacing:-.5px}.stat small{font-size:12px;color:var(--muted);font-weight:400}.main{display:grid;grid-template-columns: minmax(300px,.85fr) minmax(0,1.5fr);gap:14px;margin-top:14px}.panel h3{margin:0 0 5px;font-size:17px}.sub{font-size:12px;color:var(--muted);margin:0 0 18px}.field{margin-bottom:13px}.field label{display:block;font-size:12px;color:#b8c5d8;margin-bottom:7px}.field input{width:100%;border:1px solid #30415b;background:#0c1626;color:var(--text);border-radius:12px;padding:13px 12px;outline:none;min-height:47px}.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f5c45117}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}.totalbox{background:#0b302c;border:1px solid #1b6c5d;border-radius:14px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;margin:7px 0 14px}.totalbox span{font-size:12px;color:#a8e7d7}.totalbox strong{color:var(--green);font-size:20px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:700;transition:.2s}.primary{background:linear-gradient(100deg,#ffdc79,#f2b832);color:#1a2330;width:100%;box-shadow:0 8px 20px #f5c45118}.primary:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#1b2a40;border:1px solid #31435c;color:#dce7f5}.danger{background:#3b2029;border:1px solid #6d3440;color:#ffb7bd}.toolbar{display:flex;gap:9px;margin-bottom:14px}.toolbar input{flex:1;min-width:0;border:1px solid #30415b;background:#0c1626;color:var(--text);border-radius:12px;padding:11px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:620px;font-size:12px}th{text-align:right;color:var(--muted);font-weight:500;background:#ffffff05}th,td{padding:13px 10px;border-bottom:1px solid #26354a}tbody tr:hover{background:#ffffff04}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:#173c37;color:var(--green);font-size:11px}.empty{text-align:center;color:var(--muted);padding:34px 12px}.actions{display:flex;gap:6px}.mini{padding:6px 9px;font-size:11px;border-radius:8px}.notice{margin-top:14px;padding:12px 14px;border-radius:12px;background:#18263b;color:#a9bbd3;font-size:12px;line-height:1.9}.notice strong{color:var(--gold)}.error{color:#ff9da4}.foot{text-align:center;color:#667991;font-size:11px;margin-top:24px}.hidden{display:none!important}
+@media(max-width:850px){.main{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.grid .stat:last-child{grid-column:span 2}.hero{align-items:flex-start;flex-direction:column}.top{align-items:flex-start}.cloud{max-width:150px;white-space:normal}}
+@media(max-width:480px){.wrap{padding:14px 11px 30px}.brand h1{font-size:19px}.brand p{font-size:11px}.logo{width:42px;height:42px}.stat,.panel{padding:14px;border-radius:16px}.stat strong{font-size:21px}.grid{gap:9px}.twocol{grid-template-columns:1fr}.toolbar{flex-wrap:wrap}.toolbar input{flex-basis:100%}.hero h2{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">💊</div><div><h1>کپسول‌یار</h1><p>مدیریت هوشمند تحویل کپسول</p></div></div>
+ <div id="connection" class="cloud offline">● در حال بررسی اتصال</div>
+</header>
+<section class="hero"><div><div class="eyebrow">داشبورد مدیریت</div><h2>سلام، خوش آمدید 👋</h2><p>تحویل‌ها را ثبت کن؛ جمع تعداد و مبلغ به‌صورت خودکار محاسبه می‌شود.</p></div>
+ <button class="btn secondary" id="exportBtn">⬇ خروجی CSV</button>
+</section>
+<section class="grid">
+ <div class="stat"><div class="stat-top"><span>مجموع کپسول‌های تحویلی</span><span class="stat-icon">💊</span></div><strong id="sumCapsules">۰ <small>عدد</small></strong></div>
+ <div class="stat"><div class="stat-top"><span>مجموع مبلغ ثبت‌شده</span><span class="stat-icon">↗</span></div><strong id="sumMoney">۰ <small>تومان</small></strong></div>
+ <div class="stat"><div class="stat-top"><span>تعداد ثبت‌ها</span><span class="stat-icon">▤</span></div><strong id="sumRecords">۰ <small>مورد</small></strong></div>
+</section>
+<div class="main">
+<section class="panel">
+ <h3>＋ ثبت تحویل جدید</h3><p class="sub">اطلاعات را وارد کن و ثبت را بزن.</p>
+ <form id="entryForm">
+  <div class="field"><label for="fullName">نام و نام خانوادگی</label><input id="fullName" maxlength="100" required placeholder="مثلاً علی محمدی" autocomplete="name"></div>
+  <div class="twocol">
+   <div class="field"><label for="quantity">تعداد کپسول</label><input id="quantity" type="number" min="1" step="1" required placeholder="مثلاً ۱۰"></div>
+   <div class="field"><label for="unitPrice">قیمت هر کپسول (تومان)</label><input id="unitPrice" type="number" min="0" step="1" required placeholder="مثلاً ۲۳۵۰۰۰"></div>
+  </div>
+  <div class="field"><label for="recordDate">تاریخ ثبت</label><input id="recordDate" type="date" required></div>
+  <div class="totalbox"><span>مبلغ کل</span><strong id="liveTotal">۰ تومان</strong></div>
+  <button class="btn primary" id="saveBtn" type="submit">ثبت اطلاعات ←</button>
+ </form>
+ <div class="notice"><strong>نکته:</strong> قیمت هر کپسول را دستی وارد کن؛ مبلغ کل و آمار بالای صفحه خودکار محاسبه می‌شوند.</div>
+ <div id="message" class="notice hidden" role="status"></div>
+</section>
+<section class="panel">
+ <h3>آخرین تحویل‌ها</h3><p class="sub">جست‌وجو بر اساس نام و مشاهده سوابق ثبت‌شده</p>
+ <div class="toolbar"><input id="searchBox" placeholder="⌕ جست‌وجوی نام..." aria-label="جست‌وجو"><button class="btn secondary" id="refreshBtn">↻ تازه‌سازی</button></div>
+ <div class="tablewrap"><table><thead><tr><th>نام و نام خانوادگی</th><th>تعداد</th><th>قیمت واحد</th><th>مبلغ کل</th><th>تاریخ</th><th>عملیات</th></tr></thead><tbody id="recordsBody"><tr><td colspan="6" class="empty">برای شروع، اولین تحویل را ثبت کن.</td></tr></tbody></table></div>
+ <div id="listStatus" class="notice">حالت پیش‌نمایش فعال است. برای ذخیره آنلاین، تنظیمات Firebase را طبق راهنما وارد کن.</div>
+</section>
+</div>
+<div class="foot">کپسول‌یار · نسخه اولیه 1.0 · آماده توسعه و افزودن امکانات</div>
+</div>
+<script type="module">
+const $ = id => document.getElementById(id);
+const fmt = n => new Intl.NumberFormat('fa-IR').format(Number(n)||0);
+const money = n => fmt(n)+' تومان';
+const now = new Date();
+$('recordDate').value = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+let records = [];
+let mode = 'demo';
+let dbApi = null;
+const firebaseConfig = {
+  // مقادیر پروژه Firebase را طبق README اینجا وارد کن.
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  appId: "YOUR_APP_ID"
+};
+function calculate(){const q=Number($('quantity').value)||0,p=Number($('unitPrice').value)||0;$('liveTotal').textContent=money(q*p)}
+$('quantity').addEventListener('input',calculate);$('unitPrice').addEventListener('input',calculate);
+function dateFa(v){if(!v)return '—';const [y,m,d]=v.split('-').map(Number);return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(y,m-1,d,12))}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+ const query=$('searchBox').value.trim().toLocaleLowerCase('fa');
+ const filtered=records.filter(r=>r.name.toLocaleLowerCase('fa').includes(query)).sort((a,b)=>String(b.date).localeCompare(String(a.date))||b.createdAt-a.createdAt);
+ $('sumCapsules').innerHTML=fmt(records.reduce((s,r)=>s+r.quantity,0))+' <small>عدد</small>';
+ $('sumMoney').innerHTML=fmt(records.reduce((s,r)=>s+r.total,0))+' <small>تومان</small>';
+ $('sumRecords').innerHTML=fmt(records.length)+' <small>مورد</small>';
+ if(!filtered.length){$('recordsBody').innerHTML='<tr><td colspan="6" class="empty">'+(records.length?'موردی مطابق جست‌وجو پیدا نشد.':'هنوز تحویلی ثبت نشده است.')+'</td></tr>';return}
+ $('recordsBody').innerHTML=filtered.map(r=>`<tr><td><strong>${esc(r.name)}</strong></td><td><span class="pill">${fmt(r.quantity)} عدد</span></td><td>${fmt(r.unitPrice)}</td><td><strong>${fmt(r.total)}</strong></td><td>${dateFa(r.date)}</td><td><div class="actions"><button class="btn danger mini" data-del="${esc(r.id)}">حذف</button></div></td></tr>`).join('');
+ $('recordsBody').querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',()=>removeRecord(b.dataset.del)));
+}
+function msg(t,err=false){$('message').textContent=t;$('message').classList.remove('hidden');$('message').classList.toggle('error',err);setTimeout(()=>$('message').classList.add('hidden'),5000)}
+function saveLocal(){try{localStorage.setItem('kapsulyar_demo_records',JSON.stringify(records))}catch(e){}}
+function removeRecord(id){if(!confirm('این رکورد حذف شود؟'))return;if(mode==='online'&&dbApi){dbApi.remove(id).catch(e=>msg('حذف انجام نشد: '+e.message,true));}else{records=records.filter(r=>r.id!==id);saveLocal();render()}}
+$('entryForm').addEventListener('submit',async e=>{
+ e.preventDefault();const name=$('fullName').value.trim(),quantity=Number($('quantity').value),unitPrice=Number($('unitPrice').value),date=$('recordDate').value;
+ if(!name||!Number.isInteger(quantity)||quantity<1||!Number.isFinite(unitPrice)||unitPrice<0||!date){msg('لطفاً همه اطلاعات را درست وارد کن.',true);return}
+ const rec={id:crypto.randomUUID(),name,quantity,unitPrice,total:quantity*unitPrice,date,createdAt:Date.now()};
+ $('saveBtn').disabled=true;
+ try{if(mode==='online'&&dbApi){await dbApi.add(rec)}else{records.push(rec);saveLocal()}
+ $('fullName').value='';$('quantity').value='';$('unitPrice').value='';calculate();render();msg(mode==='online'?'اطلاعات با موفقیت آنلاین ثبت شد.':'ثبت شد؛ این رکورد فعلاً فقط روی همین مرورگر ذخیره شده است.')}
+ catch(err){msg('ثبت انجام نشد: '+err.message,true)}finally{$('saveBtn').disabled=false}
+});
+$('searchBox').addEventListener('input',render);
+$('refreshBtn').addEventListener('click',()=>{if(dbApi)dbApi.reload();else{records=JSON.parse(localStorage.getItem('kapsulyar_demo_records')||'[]');render();msg('فهرست تازه‌سازی شد.')}})
+$('exportBtn').addEventListener('click',()=>{
+ const rows=[['نام و نام خانوادگی','تعداد کپسول','قیمت هر کپسول (تومان)','مبلغ کل (تومان)','تاریخ']];
+ records.forEach(r=>rows.push([r.name,r.quantity,r.unitPrice,r.total,r.date]));
+ const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='kapsulyar-records.csv';a.click();URL.revokeObjectURL(a.href)
+});
+records=JSON.parse(localStorage.getItem('kapsulyar_demo_records')||'[]');render();
+(async()=>{
+ if(firebaseConfig.apiKey.startsWith('YOUR_')||firebaseConfig.projectId.startsWith('YOUR_')){
+ $('connection').textContent='● حالت پیش‌نمایش';$('connection').className='cloud offline';$('listStatus').textContent='حالت پیش‌نمایش فعال است. برای استفاده مشترک بین گوشی و وب، تنظیمات Firebase را طبق فایل README تکمیل کن.';return;
+ }
+ try{
+  const {initializeApp}=await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js');
+  const {getFirestore,collection,addDoc,deleteDoc,doc,getDocs,query,orderBy}=await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+  const app=initializeApp(firebaseConfig),db=getFirestore(app),col=collection(db,'capsule_records');
+  const reload=async()=>{const snap=await getDocs(query(col,orderBy('createdAt','desc')));records=snap.docs.map(d=>({...d.data(),id:d.id}));render()};
+  dbApi={add:async r=>{const {id,...data}=r;await addDoc(col,data);await reload()},remove:async id=>{await deleteDoc(doc(db,'capsule_records',id));await reload()},reload};
+  await reload();mode='online';$('connection').textContent='● اتصال آنلاین';$('connection').className='cloud online';$('listStatus').textContent='به پایگاه داده آنلاین متصل است؛ رکوردها در این پروژه ذخیره می‌شوند.';$('saveBtn').textContent='ثبت آنلاین اطلاعات ←';
+ }catch(err){$('connection').textContent='● خطا در اتصال';$('connection').className='cloud offline';$('listStatus').textContent='اتصال آنلاین برقرار نشد. تنظیمات Firebase و قوانین پایگاه داده را بررسی کن. خطا: '+err.message}
+})();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
